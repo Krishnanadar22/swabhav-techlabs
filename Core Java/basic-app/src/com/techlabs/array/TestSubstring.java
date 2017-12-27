@@ -1,15 +1,24 @@
 package com.techlabs.array;
 
 public class TestSubstring {
-	public static void main(String args[]) {
-		String url = "https://www.swabhavtechlabs.com/studtn=?Krishna";
-		int locOfDot = url.indexOf("//");
-		int locOfLastDot = url.lastIndexOf("/");
-		String domainName = url.substring(locOfDot + 2, locOfLastDot);
-		System.out.println(domainName);
+	public static void main(String urls[]) {
+		System.out.println("Found " + urls.length + " urls");
 
-		int locOfName = url.indexOf("?");
-		String Name = url.substring(locOfName + 1);
-		System.out.println(Name);
+		for (String url : urls) {
+			int locOfSlash = url.indexOf("/");
+			int locOfLastSlash = url.lastIndexOf("/");
+			String domainName = url.substring(locOfSlash + 2, locOfLastSlash);
+			System.out.println("Domain name of url:");
+			System.out.println(domainName);
+
+			System.out.println("Name found in url:");
+			int locOfName = url.indexOf("?");
+			if (locOfName != -1) {
+				String Name = url.substring(locOfName + 1);
+				System.out.println(Name);
+			} else {
+				System.out.println("NULL");
+			}
+		}
 	}
 }
