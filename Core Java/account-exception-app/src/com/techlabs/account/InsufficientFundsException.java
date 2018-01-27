@@ -11,7 +11,7 @@ public class InsufficientFundsException extends RuntimeException {
 
 	@Override
 	public String getMessage() {
-		return ("Sorry, aacount number " + account.getAccNo() + " has balance "
+		return ("Sorry, account number " + account.getAccNo() + " has balance "
 				+ account.getBalance() + " and is trying to withdraw " + amount + " which violates bank's savings account rules");
 	}
 }
