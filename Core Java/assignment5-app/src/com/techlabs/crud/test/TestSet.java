@@ -12,12 +12,16 @@ public class TestSet {
 
 		Set<Student> students;
 		students = new HashSet<Student>();
+		System.out.println(student1.hashCode());
+		System.out.println(student2.hashCode());
+		System.out.println(student1.equals(student2));
+		
 		System.out.println(students.add(student1));
 		System.out.println(students.add(student2));
 		System.out.println(students.add(student1));
-		System.out.println(student1.hashCode());
-		System.out.println(student2.hashCode());
-
+		
+		System.out.println(students.size());
+		
 		for (Student std : students) {
 			System.out.println(std.getName());
 		}

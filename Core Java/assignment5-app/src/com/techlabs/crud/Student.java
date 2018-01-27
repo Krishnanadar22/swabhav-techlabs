@@ -1,6 +1,6 @@
 package com.techlabs.crud;
 
-public class Student {
+public class Student implements Cloneable {
 	private String name;
 	private int contactNumber;
 
@@ -19,5 +19,21 @@ public class Student {
 
 	public int getContactNumber() {
 		return (contactNumber);
+	}
+	
+	@Override
+	public boolean equals(Object student) {
+		Student s= (Student)student;
+		return getName().equals(s.getName());
+	}
+
+	@Override
+	public int hashCode() {
+		return (getName().hashCode());
+	}
+
+	@Override
+	public Object clone() throws CloneNotSupportedException {
+		return (super.clone());
 	}
 }
