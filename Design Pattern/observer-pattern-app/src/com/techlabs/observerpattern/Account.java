@@ -1,6 +1,7 @@
 package com.techlabs.observerpattern;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Account {
 	private String name;
@@ -8,7 +9,7 @@ public class Account {
 	private int accNumber;
 	private double balance;
 	private String email;
-	private ArrayList<IAccountListener> listeners;
+	private List<IAccountListener> listeners;
 
 	public Account(String name, int accNumber, double contactNumber,
 			String email, double balance) {
@@ -34,6 +35,16 @@ public class Account {
 		}
 	}
 
+	public void deposit(double amt) {
+		this.balance = this.balance + amt;
+		this.notifyListeners();
+	}
+
+	public void withdraw(double amt) {
+		this.balance = this.balance - amt;
+		this.notifyListeners();
+	}
+
 	public double getBalance() {
 		return this.balance;
 	}
@@ -54,13 +65,4 @@ public class Account {
 		return this.accNumber;
 	}
 
-	public void deposit(double amt) {
-		this.balance = this.balance + amt;
-		this.notifyListeners();
-	}
-
-	public void withdraw(double amt) {
-		this.balance = this.balance - amt;
-		this.notifyListeners();
-	}
 }
