@@ -1,11 +1,11 @@
 package ocp.refactor;
 
-public class Festival_Normal implements IFestivalRate {
+public class FestivalHoli implements IFestivalRate {
 
 	@Override
 	public double getRate() {
 		// TODO Auto-generated method stub
-		return 7;
+		return 8.5;
 	}
 
 }

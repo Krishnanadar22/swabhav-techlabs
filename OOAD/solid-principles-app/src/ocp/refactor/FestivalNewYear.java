@@ -1,6 +1,6 @@
 package ocp.refactor;
 
-public class Festival_New_Year implements IFestivalRate {
+public class FestivalNewYear implements IFestivalRate {
 	@Override
 	public double getRate() {
 		return 8;
