@@ -13,10 +13,15 @@ public class Folder implements IDriveItem {
 	}
 
 	@Override
-	public void showDetails() {
+	public void showDetails(int level) {
+		int levelCopy=level;
+		while(level>0){
+			System.out.print("\t");
+			level--;
+		}
 		System.out.println("Folder Name: " + name);
 		for (IDriveItem driveItem : driveItems) {
-			driveItem.showDetails();
+			driveItem.showDetails(levelCopy+1);
 		}
 	}
 

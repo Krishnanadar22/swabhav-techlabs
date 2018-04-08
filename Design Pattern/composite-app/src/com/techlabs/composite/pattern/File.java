@@ -12,7 +12,11 @@ public class File implements IDriveItem {
 	}
 
 	@Override
-	public void showDetails() {
+	public void showDetails(int level) {
+		while(level>0){
+			System.out.print("\t");
+			level--;
+		}
 		System.out.println("Name: " + name + " FileType: " + fileType
 				+ " size: " + size);
 	}

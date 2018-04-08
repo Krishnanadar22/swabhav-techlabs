@@ -11,6 +11,6 @@ public class TestCompositePattern {
 		level1.add(new File("b", ".mp3", 10));
 
 		root.add(level1);
-		root.showDetails();
+		root.showDetails(0);
 	}
 }
